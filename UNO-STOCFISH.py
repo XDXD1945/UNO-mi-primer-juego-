@@ -298,10 +298,12 @@ def turno_jugador(mano_j, mano_pc, mazo, pozo, mesa, color):
                 pozo.append(mesa)
 
                 # Guardar color en memoria del comportamiento del jugador
+                colores_validos = {"Rojo", "Amarillo", "Verde", "Azul"}
                 if " " in c:
                     col = c.split()[0]
-                    memoria["colores_jugados_por_el_jugador"][col] += 1
-                    memoria["colores_que_no_tiene_el_jugador"].discard(col)
+                    if col in colores_validos:
+                        memoria["colores_jugados_por_el_jugador"][col] += 1
+                        memoria["colores_que_no_tiene_el_jugador"].discard(col)
 
                 if "+4" in c or "Cambio" in c:
                     color = input("Color (Rojo/Amarillo/Verde/Azul): ").capitalize()
@@ -382,3 +384,5 @@ def jugar_uno():
 
 if __name__ == "__main__":
     jugar_uno()
+    
+
