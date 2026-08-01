@@ -5,7 +5,7 @@ const { OpenAI } = require('openai');
 
 // Configuración de la IA - Optimizada para velocidad
 const openai = new OpenAI({
-  apiKey: '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',
+  apiKey: '',
   baseURL: 'https://integrate.api.nvidia.com/v1',
   timeout: 15000,
 });
